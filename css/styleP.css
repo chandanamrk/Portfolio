@@ -1,0 +1,346 @@
+body {
+          margin: 0;
+          font-family: 'Poppins', sans-serif;
+          color: #1a1a1a;
+          background: linear-gradient(135deg, #1a1819, #950597, #c13795);
+          background-size: 400% 400%;
+          animation: cosmicFlow 20s ease infinite;
+          overflow-x: hidden;
+        }
+        
+        @keyframes cosmicFlow {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        
+        .hero {
+          background: linear-gradient(135deg, #000000 20%, #ff4ecb 80%);
+          border-radius: 30px;
+          width: 90%;
+          height: 60vh;
+          margin: 4.8rem auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 0 40px #ff4ecb;
+          animation: fadeInUp 1.2s ease-in-out both;
+          padding: 2rem;
+        }
+        .hero::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 60vh;
+          border-radius: 30px;
+          background: radial-gradient(circle at center, rgba(255, 78, 203, 0.2), transparent);
+          z-index: -1;
+        }
+        
+        
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        
+      
+      .hero .intro {
+          text-align: center;
+          margin: 0 5rem;
+          
+      }
+      
+      .hero .intro-buttons {
+          margin: 2rem 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+      }
+      
+     
+    nav a.nav-link {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+    nav a.nav-link:hover {
+      color: #d80dd2;
+    }
+
+    h2 {
+      font-size: 2.25rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    p, li {
+      color: #e0e0e0;
+    }
+    #tsparticles {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          top: 0;
+          left: 0;
+        }
+        
+    .anime-gallery img {
+          width: 100%;
+          border-radius: 2rem;
+          box-shadow: 0 0 30px rgba(144, 0, 255, 0.6);
+          transition: transform 0.5s ease, box-shadow 0.5s ease;
+          animation: floatIn 1s ease forwards;
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        
+        .anime-gallery img:hover {
+          transform: scale(1.08) rotateZ(1deg);
+          box-shadow: 0 0 50px rgba(255, 0, 200, 0.7);
+        }
+        
+        /* New keyframes for a smooth float-up intro */
+        @keyframes floatIn {
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #1a1819, #950597, #c13795);
+  background-size: 400% 400%;
+  animation: cosmicFlow 20s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes cosmicFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+        
+        
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+      font-size: 1.1em;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-form button {
+      background-color: #f67ccf;
+      color: #fff;
+    }
+    .contact-form button:hover {
+      background-color: #9900cc;
+    }
+
+   
+
+    .light-mode {
+      background: linear-gradient(to right, #ffb6c1, #ff69b4); /* Light pink background */
+      color: #1a1a1a;
+    }
+
+    .light-mode nav, .light-mode footer {
+      background-color: #f8f9fa !important;
+    }
+
+    .light-mode .card {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .light-mode h2, .light-mode p, .light-mode li, .light-mode footer a {
+      color: #1a1a1a !important;
+    }
+   
+      /* Footer Styles */
+      .footer {
+          background-color: #000;
+          color: #fff;
+          padding: 2rem;
+      }
+      .footer-menu-list {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem; /* adds spacing between icons */
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        
+      .footer-list-items {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 50px;
+          width: 50px;
+          margin: 1rem 1rem 0 1rem;
+          border-radius: 50%;
+          background-color: #f62fa6;
+      }
+      
+      .footer-links {
+          font-size: 24px;
+          color: #fff;
+          text-decoration: none;
+          font-size: 1.5rem;
+          transition: transform 0.3s ease;
+      }
+      
+      .card {
+          background: linear-gradient(135deg, #020202, #ee496a);
+          border-radius: 1.5rem 1.5rem 0.5rem 0.5rem;
+          color: white;
+          padding: 1.5rem;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transform-style: preserve-3d;
+          perspective: 1000px;
+          cursor: pointer;
+        }
+        
+        .card:hover {
+          transform: scale(1.05) rotateX(5deg) rotateY(-5deg);
+          box-shadow: 0 15px 40px rgba(255, 0, 255, 0.4);
+        }
+        
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.4s; }
+        /* Keep going as needed */
+        
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+      
+      .social-links {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+     
+        
+        .footer-links:hover i {
+          transform: scale(1.2);
+        }
+        
+      
+      .footer-menu {
+          padding: 0 5rem;
+      }
+     
+      
+      .footer-menu .footer-menu-list {
+          display: flex;
+          list-style: none;
+      }
+      .profile-pic-container {
+          flex: 0 0 auto;
+          margin-left: 3rem;
+          margin-right: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .profile-pic {
+          width: 180px;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 4px solid #fff;
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+          transition: transform 0.3s ease-in-out;
+        }
+        .glow-card {
+          background: linear-gradient(145deg, #ca2393, #3d223e);
+          color: #fff;
+          border-radius: 20px;
+          padding: 1.5rem;
+          box-shadow: 0 0 25px #ff69b488, 0 0 10px #ff95e355;
+          border: 1px solid #ff4ecb88;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .glow-card:hover {
+          transform: translateY(-6px) scale(1.02);
+          box-shadow: 0 0 35px #ff69b4cc, 0 0 20px #ff4ecb;
+        }
+        
+        
+        .skills-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+        }
+        .skill-badge {
+          background-color: #ff4ecb22;
+          color: #fff;
+          border: 1px solid #ff4ecb;
+          border-radius: 30px;
+          padding: 0.5rem 1rem;
+          font-weight: 600;
+          transition: background-color 0.3s, transform 0.3s;
+        }
+        .skill-badge:hover {
+          background-color: #ff4ecb;
+          transform: scale(1.1);
+        }
+        
+        
+        .profile-pic:hover {
+          transform: scale(1.05);
+        }
+        .theme-toggle {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background-color: #040404;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 50px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        
+      @keyframes fadeSlideIn {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+     

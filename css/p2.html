@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #1a1a1a;
+      background: linear-gradient(135deg, #1a1819, #950597, #c13795);
+      background-size: 400% 400%;
+      animation: cosmicFlow 20s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes cosmicFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #000000 20%, #ff4ecb 80%);
+      border-radius: 30px;
+      width: 90%;
+      height: 60vh;
+      margin: 4.8rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 40px #ff4ecb;
+      animation: fadeInUp 1.2s ease-in-out both;
+      padding: 2rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 60vh;
+      border-radius: 30px;
+      background: radial-gradient(circle at center, rgba(255, 78, 203, 0.2), transparent);
+      z-index: -1;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero .intro {
+      text-align: center;
+      margin: 0 5rem;
+    }
+
+    .hero .intro-buttons {
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    nav a.nav-link {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+
+    nav a.nav-link:hover {
+      color: #d80dd2;
+    }
+
+    .anime-gallery img {
+      width: 100%;
+      border-radius: 2rem;
+      box-shadow: 0 0 30px rgba(144, 0, 255, 0.6);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      animation: floatIn 1s ease forwards;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .anime-gallery img:hover {
+      transform: scale(1.08) rotateZ(1deg);
+      box-shadow: 0 0 50px rgba(255, 0, 200, 0.7);
+    }
+
+    @keyframes floatIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+      font-size: 1.1em;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-form button {
+      background-color: #f67ccf;
+      color: #fff;
+    }
+
+    .contact-form button:hover {
+      background-color: #9900cc;
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+      background: linear-gradient(to right, #1a1819, #950597);
+      color: #e0e0e0;
+    }
+
+    .dark-mode nav, .dark-mode footer {
+      background-color: #222222 !important;
+    }
+
+    .dark-mode .card {
+      background-color: #333 !important;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .dark-mode h2, .dark-mode p, .dark-mode li, .dark-mode footer a {
+      color: #e0e0e0 !important;
+    }
+
+    /* Light Mode */
+    .light-mode {
+      background: linear-gradient(to right, #ffb6c1, #ff69b4);
+      color: #1a1a1a;
+    }
+
+    .light-mode nav, .light-mode footer {
+      background-color: #f8f9fa !important;
+    }
+
+    .light-mode .card {
+      background-color: #fff !important;
+      color: #000;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .light-mode h2, .light-mode p, .light-mode li, .light-mode footer a {
+      color: #1a1a1a !important;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #000;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    .footer-menu-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-list-items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      margin: 1rem;
+      border-radius: 50%;
+      background-color: #f62fa6;
+    }
+
+    .footer-links {
+      font-size: 24px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-links:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-menu {
+      padding: 0 5rem;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #ff4ecb;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Typing Effect */
+    .typing-effect {
+      font-size: 2rem;
+      font-weight: 600;
+      color: white;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: .15em solid orange;
+      width: 0;
+      animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+  </style>
+</head>
+<body class="dark-mode">
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="intro">
+      <h2>Welcome to My Portfolio</h2>
+      <p>Your one-stop destination for my works and projects!</p>
+      <div class="typing-effect">Front-End Developer | Web Designer | Creator</div>
+      <div class="intro-buttons">
+        <button class="btn btn-light">See Projects</button>
+        <button class="btn btn-dark">Contact Me</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle">Toggle Theme</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <ul class="footer-menu-list">
+      <li class="footer-list-items"><a href="#" class="footer-links">LinkedIn</a></li>
+      <li class="footer-list-items"><a href="#" class="footer-links">GitHub</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.theme-toggle');
+    const body = document.body;
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
