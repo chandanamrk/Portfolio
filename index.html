@@ -280,23 +280,25 @@
         }
 
         .profile-pic-container {
-            flex: 0 0 auto;
-            margin-left: 3rem;
-            margin-right: 2rem;
+            margin: 1rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
+            text-align: center;
         }
-
         .profile-pic {
-            width: 180px;
-            height: 180px;
+            width: 30vw;
+            max-width: 180px;
+            height: auto;
+            aspect-ratio: 1 / 1;
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid #fff;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
             transition: transform 0.3s ease-in-out;
         }
+
 
         .glow-card {
             background: linear-gradient(145deg, #ca2393, #6b026b);
@@ -395,13 +397,12 @@
 
 
     <section id="home" class="hero" :class="{ 'light-mode': darkMode }">
-        <div class="profile-pic-container">
-            <button class="theme-toggle" id="themeToggle" @click="darkMode = !darkMode"
-                x-text="darkMode ? 'Light Mode' : 'Dark Mode'"></button>
-               
-                <img src="C:\Users\chand\OneDrive\Desktop\frontend\portfolio\images\Pic_Chandana.png" alt="Pic-Chandana" class="profile-pic">
-        </div>
         <div class="intro">
+            <div class="profile-pic-container">
+                <button class="theme-toggle" id="themeToggle" @click="darkMode = !darkMode" x-text="darkMode ? 'Light Mode' : 'Dark Mode'"></button>
+               <img src="images\Pic_Chandana.png" alt="Pic-Chandana" class="profile-pic">
+            </div>
+       
             <div class="headings">
                 <h3 class="greet-heading">Hello, I'm</h3>
                 <h1 class="my-heading">Chandana M Rao</h1>
@@ -415,15 +416,21 @@
 
    
 
-    <section id="about" class="container text-center py-5" :class="{ 'light-mode': darkMode }">
-        <h2 class="mb-4">About Me</h2>
-        <p class="mb-3">A passionate B.Tech Computer Science student with a keen interest in deep learning,
-           I am driven by a strong desire to contribute to scientific research.
-            My ambition lies in leveraging the power of artificial intelligence to foster sustainable development
-             and actively participate in safeguarding our planet. Inspired by the beauty and importance of our planet,
-              I aspire to blend my technical skills with scientific inquiry to create impactful solutions for a more sustainable future.</p>
+    <section id="about" class="container py-5" :class="{ 'light-mode': darkMode }">
+  <h2 class="mb-4 text-center">About Me</h2>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <p class="mb-3 px-3" style="font-size: 1rem; line-height: 1.7; text-align: justify;">
+        A passionate B.Tech Computer Science student with a keen interest in deep learning,
+        I am driven by a strong desire to contribute to scientific research.
+        My ambition lies in leveraging the power of artificial intelligence to foster sustainable development
+        and actively participate in safeguarding our planet. Inspired by the beauty and importance of our planet,
+        I aspire to blend my technical skills with scientific inquiry to create impactful solutions for a more sustainable future.
+      </p>
+    </div>
+  </div>
+</section>
 
-    </section>
 
     <section id="projects" class="container py-5" :class="{ 'light-mode': darkMode }">
   <h2 class="text-center mb-4">Projects</h2>
@@ -600,9 +607,9 @@
    <section id="home" class="text-center py-5 container" :class="{ 'light-mode': darkMode }">
 
         <div class="row anime-gallery mt-5">
-            <div class="col-md-4 mb-4"><a href="C:\Users\chand\OneDrive\Desktop\frontend\portfolio\images\dope.png"><img src="C:\Users\chand\OneDrive\Desktop\frontend\portfolio\images\dope1.png" alt="p2" border="0"></a></div>
-            <div class="col-md-4 mb-4"><a href="C:\Users\chand\OneDrive\Desktop\frontend\portfolio\images\dog.png"><img src="C:\Users\chand\OneDrive\Desktop\frontend\portfolio\images\dog1.png" alt="p1" border="0"></a></div>
-            <div class="col-md-4 mb-4"><a href="C:\Users\chand\OneDrive\Desktop\frontend\portfolio\images\quiz.png"><img src="C:\Users\chand\OneDrive\Desktop\frontend\portfolio\images\quiz1.png" alt="p3" border="0"></a></div>
+            <div class="col-md-4 mb-4"><a href="images\dope.png"><img src="images\dope1.png" alt="p2" border="0"></a></div>
+            <div class="col-md-4 mb-4"><a href="images\dog.png"><img src="images\dog1.png" alt="p1" border="0"></a></div>
+            <div class="col-md-4 mb-4"><a href="images\quiz.png"><img src="images\quiz1.png" alt="p3" border="0"></a></div>
            
         </div>
     </section>
