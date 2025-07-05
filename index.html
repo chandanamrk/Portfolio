@@ -397,13 +397,12 @@
 
 
     <section id="home" class="hero" :class="{ 'light-mode': darkMode }">
-        <div class="profile-pic-container">
-            <button class="theme-toggle" id="themeToggle" @click="darkMode = !darkMode"
-                x-text="darkMode ? 'Light Mode' : 'Dark Mode'"></button>
-               
-                <img src="images\Pic_Chandana.png" alt="Pic-Chandana" class="profile-pic">
-        </div>
         <div class="intro">
+            <div class="profile-pic-container">
+                <button class="theme-toggle" id="themeToggle" @click="darkMode = !darkMode" x-text="darkMode ? 'Light Mode' : 'Dark Mode'"></button>
+               <img src="images\Pic_Chandana.png" alt="Pic-Chandana" class="profile-pic">
+            </div>
+       
             <div class="headings">
                 <h3 class="greet-heading">Hello, I'm</h3>
                 <h1 class="my-heading">Chandana M Rao</h1>
