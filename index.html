@@ -49,26 +49,26 @@
             }
         }
 
-        .hero {
-            background: linear-gradient(135deg, #000000 20%, var(--primary-color) 80%);
-            border-radius: 30px;
-            width: 90%;
-            height: 60vh;
-            margin: 4.8rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 40px var(--primary-color);
-            animation: fadeInUp 1.2s ease-in-out both;
-            padding: 2rem;
-            position: relative;
-        }
-
+        
+.hero {
+    background: linear-gradient(135deg, #000000 15%, #5a2047 55%, #c77a97 100%);
+    border-radius: 30px;
+    width: 90%;
+    min-height: 420px;
+    margin: 4rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px var(--primary-color);
+    padding: 3rem 2rem;
+    position: relative;
+}
         .hero::before {
             content: "";
             position: absolute;
             width: 100%;
-            height: 60vh;
+            min-height: 450px;
+            height: auto;
             border-radius: 30px;
             background: radial-gradient(circle at center, rgba(255, 78, 203, 0.2), transparent);
             z-index: -1;
@@ -287,17 +287,15 @@
             flex-wrap: wrap;
             text-align: center;
         }
-        .profile-pic {
-            width: 30vw;
-            max-width: 180px;
-            height: auto;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-            transition: transform 0.3s ease-in-out;
-        }
+       .profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 8px rgba(255,255,255,0.25);
+}
 
 
         .glow-card {
@@ -353,6 +351,18 @@
             font-size: 16px;
             cursor: pointer;
         }
+        .intro-buttons .btn {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 8px 20px;
+    border: 5px solid #f797dc;
+    border-radius: 12px;
+    
+}
+body.light-mode {
+    background: #f8f9fa;
+    color: #212529;
+}
 
         @keyframes fadeSlideIn {
             to {
@@ -365,7 +375,8 @@
 
 </head>
 
-<body x-data="{ darkMode: false }">
+<body x-data="{ darkMode: false }"
+      :class="{ 'light-mode': darkMode }">
 
     <div id="tsparticles"></div>
 
@@ -387,7 +398,9 @@
                             :class="{ 'text-dark': darkMode }">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact" :class="{ 'text-dark': darkMode }">Contact</a>
                     </li>
-
+                    <li class="nav-item"><a class="nav-link" href="#publications":class="{ 'text-dark': darkMode }">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#internships":class="{ 'text-dark': darkMode }">Internships</a></li>
+                    
                 </ul>
 
             </div>
@@ -406,10 +419,37 @@
             <div class="headings">
                 <h3 class="greet-heading">Hello, I'm</h3>
                 <h1 class="my-heading">Chandana M Rao</h1>
-                <h2 class="sub-heading">
-                    I'm a Btech computer science engineering student.
-                </h2>
+                <h3 class="sub-heading mb-1">Computer Science Graduate</h3>
+                <h4 class="hero-specialization">AI • Data Science • Machine Learning</h4>
+                <div class="intro-buttons">
+                  <a href="resume/cv.pdf"
+                  target="_blank"
+                  class="btn btn-light">
+                  View CV </a>
+                </div>
+                <div class="social-links mt-3">
+
+  <a class="footer-links mx-2"
+     href="https://github.com/chandanamrk"
+     target="_blank">
+    <i class="fab fa-github fa-2x"></i>
+  </a>
+
+  <a class="footer-links mx-2"
+     href="https://www.linkedin.com/in/chandana-m-rao-806680251/"
+     target="_blank">
+    <i class="fab fa-linkedin fa-2x"></i>
+  </a>
+
+  <a class="footer-links mx-2"
+     href="https://www.instagram.com/chandanamrk/"
+     target="_blank">
+    <i class="fab fa-instagram fa-2x"></i>
+  </a>
+
+</div>
             </div>
+
         </div>
     </section>
 
@@ -421,12 +461,8 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8">
       <p class="mb-3 px-3" style="font-size: 1rem; line-height: 1.7; text-align: justify;">
-        A passionate B.Tech Computer Science student with a keen interest in deep learning,
-        I am driven by a strong desire to contribute to scientific research.
-        My ambition lies in leveraging the power of artificial intelligence to foster sustainable development
-        and actively participate in safeguarding our planet. Inspired by the beauty and importance of our planet,
-        I aspire to blend my technical skills with scientific inquiry to create impactful solutions for a more sustainable future.
-      </p>
+A B.Tech Computer Science graduate with a strong foundation in Artificial Intelligence, Deep Learning, Computer Vision, and Data Science. Experienced in developing interdisciplinary projects involving machine learning, embedded systems, and sustainable technologies. Skilled in Python, Java, JavaScript, and modern web frameworks, with research experience demonstrated through two co-authored publications in peer-reviewed journals. Passionate about building intelligent, data-driven solutions that address real-world challenges and contribute to technological innovation.
+</p>
     </div>
   </div>
 </section>
@@ -440,19 +476,6 @@
     <div class="col-md-4">
       <div class="card bg-dark text-white h-100 shadow">
         <div class="card-body">
-          <h5 class="card-title">Responsive Portfolio Webpage</h5>
-          <p class="card-text">A responsive webpage built with HTML, CSS, JS and Bootstrap.</p>
-          <a href="https://github.com/chandanamrk/Portfolio" class="btn btn-light btn-sm mt-2" target="_blank">
-            <i class="fab fa-github"></i> View on GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="col-md-4">
-      <div class="card bg-dark text-white h-100 shadow">
-        <div class="card-body">
           <h5 class="card-title">Skin Disease Detection App</h5>
           <p class="card-text">Android app using U-Net image segmentation to detect and classify canine skin diseases.</p>
           <a href="https://github.com/chandanamrk/DogSkin" class="btn btn-light btn-sm mt-2" target="_blank">
@@ -461,8 +484,35 @@
         </div>
       </div>
     </div>
-
+    <!-- Project 2 -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-white h-100 shadow">
+        <div class="card-body">
+          <h5 class="card-title">Responsive Portfolio Webpage</h5>
+          <p class="card-text">A responsive webpage built with HTML, CSS, JS and Bootstrap.</p>
+          <a href="https://github.com/chandanamrk/Portfolio" class="btn btn-light btn-sm mt-2" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+    
     <!-- Project 3 -->
+     <div class="col-md-4">
+  <div class="card bg-dark text-white h-100 shadow">
+    <div class="card-body">
+      <h5 class="card-title">Digital Twin for Smart Factory Energy Optimisation</h5>
+      <p class="card-text">
+        Samsung Innovation Campus capstone project focused on smart factory monitoring and energy consumption prediction</p>
+      <a href="https://github.com/chandanamrk/Digital-Twin-Smart-Factory"
+         class="btn btn-light btn-sm mt-2"
+         target="_blank">
+        <i class="fab fa-github"></i> View on GitHub</a>
+    </div>
+  </div>
+</div>
+
+    <!-- Project 4 -->
     <div class="col-md-4">
       <div class="card bg-dark text-white h-100 shadow">
         <div class="card-body">
@@ -475,7 +525,7 @@
       </div>
     </div>
 
-    <!-- Project 4 -->
+    <!-- Project 5 -->
     <div class="col-md-4">
       <div class="card bg-dark text-white h-100 shadow">
         <div class="card-body">
@@ -488,7 +538,7 @@
       </div>
     </div>
 
-    <!-- Project 5 -->
+    <!-- Project 6 -->
     <div class="col-md-4">
       <div class="card bg-dark text-white h-100 shadow">
         <div class="card-body">
@@ -501,39 +551,131 @@
       </div>
     </div>
 
-    <!-- Project 6 -->
-    <div class="col-md-4">
-      <div class="card bg-dark text-white h-100 shadow">
-        <div class="card-body">
-          <h5 class="card-title">Text-to-Speech in Local Language</h5>
-          <p class="card-text">Developed a text-to-speech website in the local language to assist farmers who are unable to read.</p>
+    
+  </div>
+</section>
+
+ <section id="publications" class="container py-5" :class="{ 'light-mode': darkMode }">
+  <h2 class="text-center mb-4">Research Publications</h2>
+
+  <div class="row g-4">
+
+    <div class="col-md-6">
+      <div class="glow-card h-100 d-flex flex-column">
+        <h5>
+          Mobile-Based Deep Learning Approach for the Early Diagnosis of
+          Canine Skin and Eye Diseases Using MobileNetV2
+        </h5>
+
+        <p>Published in Open Veterinary Journal (2026)</p>
+
+        <div class="mt-auto">
+          <a href="certificates/canine_disease_detection_paper.pdf"
+             target="_blank"
+             class="btn btn-light mt-2 me-2">
+             Journal
+          </a>
+
+          <a href="https://www.ejmanager.com/mnstemps/100/100-1764321134.pdf?t=1780221884"
+             target="_blank"
+             class="btn btn-light mt-2">
+             PDF
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- Project 7 -->
-    <div class="col-md-4">
-      <div class="card bg-dark text-white h-100 shadow">
-        <div class="card-body">
-          <h5 class="card-title">Line Follower</h5>
-          <p class="card-text">Built a line follower robot using IR sensors and Arduino for the Innovatives competition.</p>
+    <div class="col-md-6">
+      <div class="glow-card h-100 d-flex flex-column">
+        <h5>
+          Digital Twin for Smart Factory Energy Optimisation
+        </h5>
+
+        <p>Published in IJRETA (2026)</p>
+
+        <div class="mt-auto">
+          <a href="certificates/digital_twin_smart_factory_paper.pdf"
+             target="_blank"
+             class="btn btn-light mt-2 me-2">
+             Journal
+          </a>
+
+          <a href="https://ojs.ijreta.org/index.php/ijreta/issue/view/1/6"
+             target="_blank"
+             class="btn btn-light mt-2">
+             PDF
+          </a>
         </div>
       </div>
     </div>
 
   </div>
 </section>
+<section id="internships" class="container py-5" :class="{ 'light-mode': darkMode }">
+  <h2 class="text-center mb-4">Internships</h2>
 
- 
+  <div class="row g-4">
+
+    <!-- Internship 1 -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-white h-100 shadow">
+        <div class="card-body">
+          <h5 class="card-title">Quanfluence Pvt. Ltd.</h5>
+          <p class="card-text">
+            GUI Development for Single Photon Detectors and Quantum Random Number Generators.
+          </p>
+
+          <a href="certificates/quanfluence_internship.pdf"
+             class="btn btn-light btn-sm mt-2"
+             target="_blank">
+             View Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internship 2 -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-white h-100 shadow">
+        <div class="card-body">
+          <h5 class="card-title">Samsung Innovation Campus</h5>
+          <p class="card-text">
+            Artificial Intelligence & Machine Learning Training Program.
+          </p>
+
+          <a href="certificates/samsung_aiml_certificate.pdf"
+             class="btn btn-light btn-sm mt-2"
+             target="_blank">
+             View Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internship 3 -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-white h-100 shadow">
+        <div class="card-body">
+          <h5 class="card-title">Unified Mentor</h5>
+          <p class="card-text">
+            Data Science Internship involving analytics,
+            visualization and machine learning.
+          </p>
+
+          <a href="certificates/um_internship_certificate.pdf"
+             class="btn btn-light btn-sm mt-2"
+             target="_blank">
+             View Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
   <section id="certifications" class="container py-5">
           <h2 class="text-center mb-4">Certifications</h2>
           <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-              <div class="glow-card">
-                <h5>Samsung Innovation Campus</h5>
-                <p>Ongoing</p>
-              </div>
-            </div>
             <div class="col-md-6 col-lg-4">
               <div class="glow-card">
                 <h5>Full Stack Web Development</h5>
@@ -546,13 +688,6 @@
                 <h5>Data Visualization Techniques</h5>
                 <p>Certified by Infosys</p>
                  <a href="certificates/dhv_certificate.pdf" target="_blank" class="btn btn-light mt-2">View Certificate</a>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="glow-card">
-                <h5>Data Science Internship</h5>
-                <p>Interned at Unified Mentor</p>
-                 <a href="certificates/um_internship_certificate.pdf" target="_blank" class="btn btn-light mt-2">View Certificate</a>
               </div>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -604,7 +739,7 @@
             </div>
           </div>
         </section>
-   <section id="home" class="text-center py-5 container" :class="{ 'light-mode': darkMode }">
+   <section id="gallery" class="text-center py-5 container" :class="{ 'light-mode': darkMode }">
 
         <div class="row anime-gallery mt-5">
             <div class="col-md-4 mb-4"><a href="images\dope.png"><img src="images\dope1.png" alt="p2" border="0"></a></div>
@@ -629,25 +764,9 @@
       <!-- Footer section -->
       <footer class="footer">
           <div class="footer-content text-center">
-                    <p class="mb-1 text-white">&copy; 2025 Chandana M Rao</p>
-                    <p class="mb-0 text-white">📧 <a href="chandanamr973@gmail.com">chandanamr973@gmail.com</a> |  +91 7039585990</p>
-                    <ul class="footer-menu-list">
-                              <li class="footer-list-items">
-                                <a class="footer-links" href="https://www.instagram.com/chandanamrk/" target="_blank">
-                                  <i class="fab fa-instagram"></i>
-                                </a>
-                              </li>
-                              <li class="footer-list-items">
-                                <a class="footer-links" href="https://github.com/chandanamrk" target="_blank">
-                                  <i class="fab fa-github"></i>
-                                </a>
-                              </li>
-                              <li class="footer-list-items">
-                                <a class="footer-links" href="https://www.linkedin.com/in/chandana-m-rao-806680251/" target="_blank">
-                                  <i class="fab fa-linkedin-in"></i>
-                                </a>
-                              </li>
-                            </ul>
+                    <p class="mb-1 text-white">&copy; 2026 Chandana M Rao</p>
+                    <p class="mb-0 text-white">📧 <a href="mailto:chandanamr1302@gmail.com">chandanamr1302@gmail.com</a></p>
+            
                             
               </div>
           </div>
